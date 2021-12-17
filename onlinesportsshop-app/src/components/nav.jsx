@@ -22,7 +22,7 @@ const Nav = () => {
         <AppBar position="static">
           <Toolbar>
             <Button to="/home" color="inherit" component={NavLink}>
-              MyApp
+              OnlineSportsShop
             </Button>
 
             <Button color="inherit" to="/customers" component={NavLink}>

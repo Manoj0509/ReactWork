@@ -44,10 +44,10 @@ class UpdateCustomer extends React.Component {
     console.log("handleSubmit");
     // Send post request to rest api
     axios
-      .put(
-        `http://localhost:8082/customers/${this.props.match.params.rollNo}`,
-        this.state.customer
-      )
+    .put(
+      `http://localhost:8088/onlinesportshopee/products/updateproduct/{productId}/${this.props.match.params.productId}`,
+      this.state.products
+  )
       .then((res) => {
         console.log(res.data);
         alert(

@@ -12,6 +12,7 @@ class CustomerTable extends React.Component {
             <tr>
               <th>custId</th>
               <th>Fullname</th>
+              <th>doB</th>
               <th>Email</th>
               <th>Contact No</th>
               <th>Role</th>
@@ -24,6 +25,7 @@ class CustomerTable extends React.Component {
               <tr key={s.custId}>
                 <td>{s.custId}</td>
                 <td>{s.fullName}</td>
+                <td>{s.doB}</td>
                 <td>{s.login.email}</td>
                 <td>{s.contactNo}</td>
                 <td>{s.login.role}</td>

@@ -20,7 +20,7 @@ import {
 class Login extends React.Component {
   state = {
     user: {
-      email: "",
+      username: "",
       password: "",
       role: "",
     },
@@ -61,13 +61,13 @@ class Login extends React.Component {
           >
             <TextField
               id="filled-basic"
-              label="Email"
+              label="Username"
               variant="filled"
-              type="email"
+              type="text"
               style={{ marginBottom: 10 }}
               fullWidth
               value={this.state.email}
-              name="email"
+              name="username"
               onChange={this.handleChange}
             />
             <TextField

@@ -14,19 +14,20 @@ import Counter from "./components/counter";
 import Products from "./components/products";
 import ProductDetails from "./components/productdetails";
 import Payment from "./components/payment";
+//import background from "./shop.jpg";
 
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" > 
       <Nav />
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={AddCustomer} />
         <Route path="/cart" component={Cart} />
-        <Route path="/customers/update/:rollNo" component={UpdateCustomer} />
+        <Route path="/customers/update/" component={UpdateCustomer} />
         <Route path="/customers/add" component={AddCustomer} />
         <Route path="/customers" component={customer} />
         <Route path="/counter" component={Counter} />
@@ -42,3 +43,4 @@ function App() {
 }
 
 export default App;
+////style={{ backgroundImage: `url(${background})` }}>

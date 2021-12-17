@@ -11,7 +11,7 @@ const Logout = () => {
   // Dispatch logout action at the of page loading
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(logoutAction(login.email));
+    dispatch(logoutAction(login.username));
   }, []);
 
   return (

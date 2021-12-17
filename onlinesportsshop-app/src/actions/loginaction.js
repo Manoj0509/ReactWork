@@ -3,7 +3,7 @@ import axios from "axios";
 // action for login
 export const loginAction = (user) => (dispatch) => {
   axios
-    .post("http://localhost:8082/login", user)
+    .post("http://localhost:8088/login", user)
     .then((res) =>
       dispatch({
         type: "LOGIN",
@@ -19,7 +19,7 @@ export const loginAction = (user) => (dispatch) => {
     });
 };
 export const logoutAction = (email) => async (dispatch) => {
-  const result = await axios.patch(`http://localhost:8082/logout/${email}`);
+  const result = await axios.patch(`http://localhost:8088/logout/${email}`);
   console.log(result);
   const res = result.data;
   res.errMsg = "";

@@ -5,7 +5,8 @@ import Joi from "joi-browser";
 class AddCustomer extends React.Component {
   state = {
     customer: {
-      fullName: "",
+      name: "",
+      doB: "",
       email: "",
       password: "",
       role: "",
@@ -14,9 +15,11 @@ class AddCustomer extends React.Component {
     errors: {},
     errMsg: "",
   };
+  
   // define schema to validate input field values
   schema = {
-    fullName: Joi.string().min(3).max(20).required(),
+    name: Joi.string().min(3).max(20).required(),
+     doB:Joi.date().iso().required(),
     email: Joi.string()
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),
@@ -70,7 +73,7 @@ class AddCustomer extends React.Component {
     console.log(this.state.errors);
     if (this.state.errors) return;
     axios
-      .post("http://localhost:8082/customers", this.state.customer)
+      .post("http://localhost:8088/onlinesportshopee/customers/addCustomer", this.state.customer)
       .then((res) => {
         console.log(res.data);
         alert(
@@ -87,7 +90,7 @@ class AddCustomer extends React.Component {
 
   render() {
     // Object Destructuring
-    const { fullName, email, password, role, contactNo } = this.state.customer;
+    const { name,doB, email, password, role, contactNo } = this.state.customer;
     const { errors, errMsg } = this.state;
     return (
       <div className="w-50 mx-auto ">
@@ -102,19 +105,32 @@ class AddCustomer extends React.Component {
           className="shadow p-3 mb-5 bg-body rounded mt-3"
         >
           <div className="mb-3">
-            <label htmlFor="fullName" className="form-label">
+            <label htmlFor="name" className="form-label">
               Fullname
             </label>
             <input
               type="text"
               className="form-control"
-              id="fullName"
+              id="name"
               aria-describedby="emailHelp"
-              value={fullName}
-              name="fullName"
+              value={name}
+              name="name"
               onChange={this.handleChange}
             />
-            {errors && <small>{errors.fullName}</small>}
+            {errors && <small>{errors.name}</small>}
+            <label htmlFor="DateofBirth" className="form-label">
+              DateofBirth
+            </label>
+            <input
+              type="date"
+              className="form-control"
+              id="doB"
+              aria-describedby="emailHelp"
+              value={doB}
+              name="doB"
+              onChange={this.handleChange}
+            />
+            {errors && <small>{errors.doB}</small>}
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
